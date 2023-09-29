@@ -1,0 +1,45 @@
+# Docker training
+
+This repository is related to the docker training assignment.
+
+## Getting Started
+
+These instructions will help you set up the project on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Node.js version >=16 and npm (Node Package Manager) should be installed on your machine.
+
+### Installing
+
+1. Clone the repository to your local machine:
+
+```bash
+git@gitlab.com:sreekanth143/docker-training.git
+cd docker-training
+```
+### Dependencies
+2. Install the project dependencies using npm:
+```bash
+npm install
+```
+### Development Server
+
+3. To start the development server and run the application locally, use the following command:
+```bash
+npm run development
+```
+### Build
+4. To build the application for production, run the following command:
+```bash
+npm run build
+```
+This will generate the optimized and minified production build in the dist directory.
+
+### CONTRIBUTING
+5.  I welcome contributions from the community. If you'd like to contribute, please follow our contributing guidelines.
+
+### License
+6. This project is licensed under the MIT License.
+
+Replace `"your-username"` in the git clone URL with your actual GitHub username. You can further customize and expand this README based on your project's specific requirements, features, and additional information you'd like to include. Also, don't forget to create `CONTRIBUTING.md` and `LICENSE` files as referenced in the README.

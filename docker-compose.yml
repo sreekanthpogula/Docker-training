@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webapp:
+    image: getting-started-image
+    ports:
+      - "3000:80"
+    depends_on:
+      - db
+
+  db:
+    image: my-db-image
+    environment:
+      MYSQL_ROOT_PASSWORD: postgres
+      MYSQL_DATABASE: persistence
