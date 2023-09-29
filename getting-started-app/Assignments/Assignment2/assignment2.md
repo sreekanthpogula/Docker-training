@@ -1,8 +1,9 @@
-Assignment2: Extend Docker Image with AWS SDK
+# Assignment2
+Extend Docker Image with AWS SDK
 
 To extend an existing Docker image and install the AWS SDK, we can create a new Dockerfile:
-Dockerfile:
-# syntax=docker/dockerfile:2
+
+# Dockerfile
 
 FROM node:18-alpine
 FROM amazon/aws-cli
