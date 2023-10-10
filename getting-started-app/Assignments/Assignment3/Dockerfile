@@ -1,6 +1,10 @@
-FROM node:18-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
-EXPOSE 3000
+app:
+restart: always
+build: .
+ports:
+- 5000:5000
+volumes: 
+- .:/app
+depends_on:
+- postgres
+entrypoint: ["python", "manage.py","runserver"]

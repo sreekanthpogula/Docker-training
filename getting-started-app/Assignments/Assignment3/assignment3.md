@@ -2,26 +2,23 @@
 
 Create Docker Containers for Web App and DB
 
-I have a web application with a persistence database
+I have a web application with a postgres database
 
-1. Start an ubuntu container that will create a file named /data.txt with a random number between 1 and 10000.
-```docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"```
+1. Build the Docker image of web application
 
-2. Validate that you can see the output by accessing the terminal in the container
-```docker ps```
-```docker exec 7c0f62ae9eae cat /data.txt```
+```docker build -t web-app .```
 
-3. Now, start another ubuntu container (the same image)
-```docker run -it ubuntu ls /```
-```docker rm -f 3c904c384dc5``` (remove first container)
+2. Build the Docker image for Postgres database
 
-4. Create a volume by using the docker volume create command.
- ```docker volume create todo-db```
+```docker build -t postgres-database .```
 
-5. Start the todo app container, but add the --mount option to specify a volume mount. Give the volume a name, and mount it to /etc/todos in the container, which captures all files created at the path.
-```docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=/etc/todos getting-started```
-verify that data persists
+3. define the app image
+ ```docker build -t app-image```
 
-6. Inspect the volume
-```docker volume inspect todo-db```
+4. define the docker-compose.yml file fo rthe application and the database configuration
 
+5. Build the application
+ ```docker-compose build```
+
+6. run the application
+ ```docker-compose up -d```
